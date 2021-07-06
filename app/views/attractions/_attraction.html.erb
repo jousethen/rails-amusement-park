@@ -1,4 +1,8 @@
 <li>
-  <%= link_to "Go on " + attraction.name, attraction_path(attraction.id) %><br>
+  <% if @user.admin%>
+    <%= link_to "Show " + attraction.name, attraction_path(attraction.id) %><br>
+  <% else %>
+    <%= link_to "Go on " + attraction.name, attraction_path(attraction.id) %><br>
+  <%end%>
 </li>
 <br>

@@ -4,3 +4,7 @@
 <ul>
   <%= render(@attractions)%> 
 </ul>
+
+<%if @user.admin %>
+  <%= link_to "New Attraction", new_attraction_path %><br>
+<% end%>
