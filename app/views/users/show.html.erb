@@ -2,21 +2,17 @@
   <h1>ADMIN</h1>
 <% end %>
 
+<% if flash[:message] %>
+  <p><%= flash[:message] %></p>
+<% end %>
+
 <h2>User Info</h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Happiness  
-    <th>Nausea  
-    <th>Height
-    <th>Tickets
-    <th>Mood</th>  
-  </tr>
+<ul>
   <%= render partial: 'user', locals: {user: @user} %>
-</table>
+</ul>
 
-<%= link_to "See Attractions", attractions_path %>
+<%= link_to "See attractions", attractions_path %><br>
 <%= link_to "Log Out",  '/signout', method: :post %>
 
 

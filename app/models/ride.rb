@@ -14,7 +14,7 @@ class Ride < ActiveRecord::Base
       
       self.user.update(tickets: tickets, nausea: nausea, happiness: happiness)
       self.user.save
-      message = "Enjoy your ride #{user.name}"
+      message = "Thanks for riding the #{self.attraction.name}!"
 
     elsif !enough_tickets? && !tall_enough?
       message = "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."
