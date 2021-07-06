@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
 
   end
 
+  def signout
+    render 'signout'
+  end
   def create
     user = User.find_by(name: params[:user][:name])
 
@@ -18,6 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete :user_id
+    redirect_to '/'
   end
 
 end

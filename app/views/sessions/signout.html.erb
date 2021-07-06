@@ -1,0 +1,4 @@
+<h1>Log Out </h2>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <%= submit_tag "Log Out" %>
+<% end %>

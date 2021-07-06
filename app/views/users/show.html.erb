@@ -1,4 +1,8 @@
-<h1>User Info</h1>
+<% if @user.admin%>
+  <h1>ADMIN</h1>
+<% end %>
+
+<h2>User Info</h2>
 
 <table>
   <tr>
@@ -11,5 +15,9 @@
   </tr>
   <%= render partial: 'user', locals: {user: @user} %>
 </table>
+
+<%= link_to "See Attractions", attractions_path %>
+<%= link_to "Log Out",  '/signout', method: :post %>
+
 
 
